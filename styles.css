@@ -1,6 +1,6 @@
 main {
   display: grid;
-  grid-template-columns: [line-start] 150px [line2] auto [line3] 150px [line-end];
+  grid-template-columns: [line-start] 30% [line2] auto [line3] 30% [line-end];
   grid-template-rows: [row-start] 40% [row-2] auto [row-end];
 }
 
@@ -42,6 +42,7 @@ h1:after {
 
 .profile {
   flex-basis: 20%;
+  margin: 0 25px 0 10px;
 }
 
 .photo {
@@ -49,7 +50,19 @@ h1:after {
   border: 3px solid #0B70D7;
   width: 150px;
   height: 150px;
-  margin: 0 10px 0 10px;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.icon {
+  font-size: 28px;
+  width: 30px;
+  height: 30px;
+  color: #0B70D7;
 }
 
 .about p {

@@ -1,4 +1,9 @@
 import Head from 'next/head' 
+import Link from 'next/link'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faDev, faLinkedinIn } from '@fortawesome/free-brands-svg-icons/'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons/'
 
 export default function Home() {
   return (
@@ -6,6 +11,7 @@ export default function Home() {
       <Head>
         <title>Neverendx - Arthur Borges's never ending portfolio</title>
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/382832813c.js" crossorigin="anonymous"></script>
       </Head>
       <main>
         <section className="brand">
@@ -19,7 +25,15 @@ export default function Home() {
             </div> 
             <div className="social">
               <div className="icons-container">
-              
+                <a href="https://github.com/arthurborgesdev" target="_blank">
+                  <FontAwesomeIcon className="icon github-icon" icon={faGithub} />
+                </a>
+                <a href="https://dev.to/arthurborges" target="_blank">
+                  <FontAwesomeIcon className="icon dev-icon" icon={faDev} />
+                </a>
+                <a className="github-icon" href="https://linkedin.com/in/arthurmoises" target="_blank">
+                  <FontAwesomeIcon className="icon linkedin-icon" icon={faLinkedinIn} />
+                </a>
               </div>
             </div>  
           </div>
@@ -32,6 +46,12 @@ export default function Home() {
             </p>
           </article>
         </section>
+        {/*<section>
+          <Link>
+            <a href="/counter"><FontAwesomeIcon icon={faChevronRight} /></a>
+          </Link>
+        </section>
+        */}
       </main>
     </>
   );
