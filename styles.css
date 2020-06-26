@@ -1,7 +1,16 @@
+main {
+  display: grid;
+  grid-template-columns: [line-start] 150px [line2] auto [line3] 150px [line-end];
+  grid-template-rows: [row-start] 40% [row-2] auto [row-end];
+}
+
 .brand {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  grid-column-start: line2;
+  grid-column-end: line3;
+  grid-row-start: row-start;
 }
 
 h1 {
@@ -10,6 +19,7 @@ h1 {
   color: #0B70D7;
   text-align: center;
   margin-top: 5px;
+  letter-spacing: 2px;
 }
 
 h1:after {
@@ -19,4 +29,36 @@ h1:after {
   height: 3px;
   background: black;
   margin: 5px auto;
+}
+
+.content {
+  display: flex;
+  grid-column-start: line2;
+  grid-column-end: line3;
+  grid-row-start: row2;
+  grid-row-end: row-end;
+  margin: 20px 30px 0 30px;
+}
+
+.profile {
+  flex-basis: 20%;
+}
+
+.photo {
+  border-radius: 50%;
+  border: 3px solid #0B70D7;
+  width: 150px;
+  height: 150px;
+  margin: 0 10px 0 10px;
+}
+
+.about p {
+  font-family: Orbitron;
+  font-size: 1em;
+  color: #000;
+  margin: 0 10px 0 10px;
+  padding: 0;
+  letter-spacing: 1px;
+  line-height: 150%;
+  word-spacing: 2px;
 }
