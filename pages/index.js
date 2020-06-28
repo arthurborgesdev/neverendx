@@ -46,12 +46,11 @@ export default function Home() {
             </p>
           </article>
         </section>
-        {/*<section>
-          <Link>
-            <a href="/counter"><FontAwesomeIcon icon={faChevronRight} /></a>
+        <section className="next-page-icon">
+          <Link href="/counter">
+            <a><FontAwesomeIcon className="chevron-right-icon"icon={faChevronRight} /></a>
           </Link>
         </section>
-        */}
       </main>
     </>
   );

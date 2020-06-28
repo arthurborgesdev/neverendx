@@ -75,3 +75,17 @@ h1:after {
   line-height: 150%;
   word-spacing: 2px;
 }
+
+.next-page-icon {
+  display: flex;
+  align-items: center;
+  grid-column-start: line3;
+  grid-column-end: line4;
+  grid-row-start: row2;
+  grid-row-end: row-end;
+}
+
+.chevron-right-icon {
+  font-size: 48px;
+  color: #0B70D7;
+}
