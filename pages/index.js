@@ -1,8 +1,9 @@
-import Head from 'next/head' 
+import Head from 'next/head'
 import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faDev, faLinkedinIn } from '@fortawesome/free-brands-svg-icons/'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/'
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
         <script src="https://kit.fontawesome.com/382832813c.js" crossorigin="anonymous"></script>
       </Head>
       <main>
-        <section className="brand">
+        <section className="header">
           <img src="/images/neverendx-logo-resized.svg" alt="Neverendx Logo" className="logo" />
           <h1>A journey that never ends</h1>
         </section>
@@ -48,7 +49,7 @@ export default function Home() {
         </section>
         <section className="next-page-icon">
           <Link href="/counter">
-            <a><FontAwesomeIcon className="chevron-right-icon"icon={faChevronRight} /></a>
+            <a><FontAwesomeIcon className="chevron-right-icon" icon={faChevronRight} /></a>
           </Link>
         </section>
       </main>
