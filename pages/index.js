@@ -14,7 +14,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/382832813c.js" crossorigin="anonymous"></script>
       </Head>
-      <main className="home">
+      <main>
         <section className="header">
           <img src="/images/neverendx-logo-resized.svg" alt="Neverendx Logo" className="logo" />
           <h1>A journey that never ends</h1>
@@ -53,6 +53,106 @@ export default function Home() {
           </Link>
         </section>
       </main>
+      <style jsx global>{`
+        main{
+          display: grid;
+          grid-template-columns: [line-start] 30% [line-2] auto [line-3] 30%;
+          grid-template-rows: [row-start] 40% [row-2] auto;
+        }
+  
+        main .header {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          grid-column-start: line-2;
+          grid-column-end: line-3;
+          grid-row-start: row-start;
+        }
+        
+        h1 {
+          font-family: Orbitron;
+          font-size: 1.2em;
+          color: #0B70D7;
+          text-align: center;
+          margin-top: 5px;
+          letter-spacing: 2px;
+        }
+        
+        h1:after {
+          content: "";
+          display: block;
+          width: 480px;
+          height: 3px;
+          background: black;
+          margin: 5px auto;
+        }
+  
+        .content {
+          display: flex;
+          grid-column-start: line-2;
+          grid-column-end: line-3;
+          grid-row-start: row-2;
+          margin: 20px 30px 0 30px;
+        }
+        
+        .profile {
+          flex-basis: 20%;
+          margin: 0 25px 0 10px;
+        }
+        
+        .photo {
+          border-radius: 50%;
+          border: 3px solid #0B70D7;
+          width: 150px;
+          height: 150px;
+        }
+        
+        .icons-container {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
+        }
+  
+        .icon {
+          font-size: 28px;
+          width: 30px;
+          height: 30px;
+          color: #0B70D7;
+        }
+        
+        .about p, main p, .header p {
+          font-family: Orbitron;
+          font-size: 1em;
+          color: #000;
+          margin: 0 10px 0 10px;
+          padding: 0;
+          letter-spacing: 1px;
+          line-height: 150%;
+          word-spacing: 2px;
+        }
+        
+        .next-page-icon {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          grid-column-start: line-3;
+          grid-row-start: row-2;
+        }
+  
+        .previous-page-icon {
+          display: flex;
+          align-items: center;
+          justify-content: space-evenly;
+          grid-column-start: line-start;
+          grid-column-end: line-2;
+          grid-row-start: row-2;
+        }
+      
+        .chevron-right-icon, .chevron-left-icon {
+          font-size: 48px;
+          color: #0B70D7;
+        }  
+      `}</style>
     </>
   );
 }
