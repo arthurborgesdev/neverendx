@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faDev, faLinkedinIn } from '@fortawesome/free-brands-svg-icons/'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/'
 
 export default function Counter() {
+  const [count, setCount] = useState(0);
+
   return (
     <>
       <Head>
@@ -22,32 +24,8 @@ export default function Counter() {
           </p>
         </section>
         <section className="content">
-          <div className="profile">
-            <div className="photo-container">
-              <img src="/images/avatar.jpeg" alt="Arthur Borges's profile photo" className="photo" />
-            </div> 
-            <div className="social">
-              <div className="icons-container">
-                <a href="https://github.com/arthurborgesdev" target="_blank">
-                  <FontAwesomeIcon className="icon github-icon" icon={faGithub} />
-                </a>
-                <a href="https://dev.to/arthurborges" target="_blank">
-                  <FontAwesomeIcon className="icon dev-icon" icon={faDev} />
-                </a>
-                <a className="github-icon" href="https://linkedin.com/in/arthurmoises" target="_blank">
-                  <FontAwesomeIcon className="icon linkedin-icon" icon={faLinkedinIn} />
-                </a>
-              </div>
-            </div>  
-          </div>
-          <article className="about">
-            <p>
-              Hello!! My name is Arthur Borges and this is my portfolio that never ends.
-              Here every page is a React Component like this one, developed using Next.js
-              and served by Vercel's platform. Click on the arrow on the right to navigate 
-              through pages. Enjoy! 
-            </p>
-          </article>
+          <p>{count}</p>
+          <button onClick={() => setCount(count + 1)}></button>
         </section>
         <section className="previous-page-icon">
           <Link href="/">
