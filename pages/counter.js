@@ -16,7 +16,7 @@ export default function Counter() {
         <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
         <script src="https://kit.fontawesome.com/382832813c.js" crossorigin="anonymous"></script>
       </Head>
-      <main>
+      <main className="counter">
         <section className="header">
           <h1>Counter Component</h1>
           <p>Why such a basic counter component? Because it is the Hello World of React,

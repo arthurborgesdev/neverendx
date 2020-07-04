@@ -1,10 +1,10 @@
-main {
+.home {
   display: grid;
   grid-template-columns: [line-start] 30% [line2] auto [line3] 30% [line-end];
   grid-template-rows: [row-start] 40% [row-2] auto [row-end];
 }
 
-.header {
+.home .header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +65,7 @@ h1:after {
   color: #0B70D7;
 }
 
-.about p, main p {
+.about p, .home p {
   font-family: Orbitron;
   font-size: 1em;
   color: #000;
@@ -102,3 +102,22 @@ h1:after {
 }
 
 /* Counter component */
+
+/* Grid definition */
+
+.counter {
+  display: grid;
+  grid-template-columns: [line-start] 30% [line-2] auto [line-3] 30% [line-end];
+  grid-template-rows: [row-start] 40% [row-2] auto [row-end];
+}
+
+.counter .header {
+  /*
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  */
+  grid-column-start: line-2;
+  grid-column-end: line-3;
+  grid-row-start: row-start;
+}
