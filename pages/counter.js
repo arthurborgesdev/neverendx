@@ -1,13 +1,17 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/'
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons/'
+import { faChevronLeft, faChevronRight, faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons/'
 
 export default function Counter() {
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let zeroCount = 0;
+    if (count < 0) setCount(zeroCount);
+  }, [count]);
 
   return (
     <>
@@ -19,36 +23,37 @@ export default function Counter() {
       <main>
         <section className="header">
           <h1>Counter Component</h1>
-          <p>Why such a basic counter component? Because it is the Hello World of React,
+          <p>Why such a basic counter component? Because it is the "Hello World" of React,
             so it makes sense to become my first portfolio's React component. :)
           </p>
         </section>
-        <section className="content">
-          <p>{count}</p>
-          <button onClick={() => setCount(count + 1)}>+</button>
-        </section>
-        <section className="previous-page-icon">
-          <Link href="/">
-            <a><FontAwesomeIcon className="chevron-left-icon" icon={faChevronLeft} /></a>
-          </Link>
-        </section>
-        <section className="next-page-icon">
-          <Link href="/google">
-            <a><FontAwesomeIcon className="chevron-right-icon" icon={faChevronRight} /></a>
-          </Link>
-        </section>
+        <section className="container">
+          <section className="previous-page-icon">
+            <Link href="/">
+              <a><FontAwesomeIcon className="chevron-left-icon" icon={faChevronLeft} /></a>
+            </Link>
+          </section>
+          <section className="content">
+            <a onClick={() => setCount(count + 1)}>
+              <FontAwesomeIcon className="plus-circle-icon" icon={faPlusCircle} />
+            </a>
+            <span>Counter: {count < 0 ? 0 : count}</span> 
+            <a onClick={() => setCount(count - 1)}>
+              <FontAwesomeIcon className="minus-circle-icon" icon={faMinusCircle} />
+            </a>
+          </section>
+          <section className="next-page-icon">
+            <Link href="/google">
+              <a><FontAwesomeIcon className="chevron-right-icon" icon={faChevronRight} /></a>
+            </Link>
+          </section>
+        </section>   
       </main>
       <style jsx global>{`
-        main {
-          display: grid;
-          grid-template-columns: [line-start] 30% [line-2] auto [line-3] 30%;
-          grid-template-rows: [row-start] 40% [row-2] auto;
-        }
-
         .header {
-          grid-column-start: line-2;
-          grid-column-end: line-3;
-          grid-row-start: row-start;
+          padding-right: 30%;
+          padding-left: 30%;
+          width: 480px;
         }
 
         h1 {
@@ -69,7 +74,7 @@ export default function Counter() {
           margin: 5px auto;
         }
 
-        .header p {
+        .header p, .content span {
           font-family: Orbitron;
           font-size: 1em;
           color: #000;
@@ -80,39 +85,24 @@ export default function Counter() {
           word-spacing: 2px;
         }
 
+        .container {
+          display: flex;
+          justify-content: space-evenly;
+        }
+
         .content {
-          grid-column-start: line-2;
-          grid-column-end: line-3;
-          grid-row-start: row-2;
-          width: 100px;
-          height: 30px;
+          margin-top: 100px;
         }
 
-        .content p {
-          padding: 50px;
+        .content a {
+          padding: 0 10px 0 10px;
         }
 
-        .content button {
-          width: 20px;
-          height: 20px;
-        }
-
-        .next-page-icon {
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          grid-column-start: line-3;
-          grid-row-start: row-2;
-        }
-  
-        .previous-page-icon {
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          grid-column-start: line-start;
-          grid-column-end: line-2;
-          grid-row-start: row-2;
-        }
+        .plus-circle-icon,  .minus-circle-icon {
+          font-size: 32px;
+          color: #0B70D7;
+          cursor: pointer;
+        }  
       
         .chevron-right-icon, .chevron-left-icon {
           font-size: 48px;
